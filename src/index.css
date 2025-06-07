@@ -1,0 +1,68 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 251 245 233;
+    --foreground: 31 31 31;
+
+    --card: 255 255 255;
+    --card-foreground: 31 31 31;
+
+    --popover: 255 255 255;
+    --popover-foreground: 31 31 31;
+
+    --primary: 100 71 215;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 247 146 193;
+    --secondary-foreground: 31 31 31;
+
+    --muted: 251 245 233;
+    --muted-foreground: 115 115 115;
+
+    --accent: 212 251 55;
+    --accent-foreground: 31 31 31;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 255 255 255;
+
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 100 71 215;
+
+    --radius: 1rem;
+
+    --sidebar-background: 255 255 255;
+    --sidebar-foreground: 31 31 31;
+    --sidebar-primary: 100 71 215;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 251 245 233;
+    --sidebar-accent-foreground: 31 31 31;
+    --sidebar-border: 229 229 229;
+    --sidebar-ring: 100 71 215;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-ruchi-cream text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

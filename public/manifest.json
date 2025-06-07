@@ -1,0 +1,19 @@
+
+{
+  "name": "RUCHI - Delicious Asian Cuisine",
+  "short_name": "RUCHI",
+  "description": "Experience authentic Asian flavors with our fresh salads, bao, sushi and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF5E9",
+  "theme_color": "#6447D7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["food", "restaurants", "lifestyle"]
+}
