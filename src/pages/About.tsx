@@ -107,7 +107,7 @@ const About = () => {
               className="rounded-full border-ruchi-blue/20 text-ruchi-blue hover:bg-ruchi-blue hover:text-white"
               asChild
             >
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/ruchi_room/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5" />
               </a>
             </Button>
