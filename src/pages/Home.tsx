@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col justify-between">
       {/* Hero Section */}
       <section className="relative w-full h-[calc(100vh-64px)]">
         <img
@@ -42,6 +42,42 @@ const Home = () => {
           </Button>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-gray-200 py-8 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Order via Delivery Partners</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="https://www.foodora.se/restaurant/wvdo/ruchi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 rounded-full bg-pink-500 text-white hover:bg-pink-600 text-sm font-semibold shadow"
+            >
+              Foodora
+            </a>
+            <a
+              href="https://www.ubereats.com/se/store/ruchi/fGanG7K0XcOetSwxZx1SlA?srsltid=AfmBOoqUrPgywqL2dXKuOFOuYlo5zjxYmIxVQhxTxnfwhF2kpqriLudm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 text-sm font-semibold shadow"
+            >
+              Uber Eats
+            </a>
+            <a
+              href="https://wolt.com/sv/swe/boras/restaurant/ruchi?srsltid=AfmBOoq-KBKfKJBvWxM0bZmDt687OP9llVlqTWCN2UbmbMBrWylJC9Tb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 text-sm font-semibold shadow"
+            >
+              Wolt
+            </a>
+          </div>
+          <p className="text-sm text-gray-500 mt-6">
+            © {new Date().getFullYear()} RUCHI. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
