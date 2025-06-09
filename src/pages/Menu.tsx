@@ -36,8 +36,8 @@ const Menu = () => {
             Our Menu
           </h1>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-6">
-            Discover our carefully curated selection of authentic Asian dishes, 
-            made fresh daily with premium ingredients.
+          We keep it casual, creative, and seriously tasty. <br /> 
+          It’s all about mixing things up!!!
           </p>
           
           {/* Order Now Button */}
