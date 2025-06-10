@@ -23,11 +23,8 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/76cf2ae0-44fd-461b-a4d4-00610daaef6e.png" 
-              alt="Brand Icon" 
-              className="w-8 h-8"
-            />
+            <img src="/logo.png" alt="RUCHI Logo" className="h-8 w-auto" />
+
           </Link>
 
           {/* Desktop Navigation */}
