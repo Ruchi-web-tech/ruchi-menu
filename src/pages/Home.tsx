@@ -7,10 +7,18 @@ const Home = () => {
     <div className="min-h-screen flex flex-col justify-between">
       {/* Hero Section */}
       <section className="relative w-full h-[calc(100vh-64px)]">
+        {/* Mobile Hero Image */}
         <img
-          src="/ruchi-hero-img.jpg"
-          alt="Ruchi Hero Banner"
-          className="w-full h-full object-cover"
+          src="/ruchi-hero-mobile.jpg"
+          alt="Ruchi Mobile Hero"
+          className="w-full h-full object-cover block md:hidden"
+        />
+
+        {/* Desktop Hero Image */}
+        <img
+          src="/ruchi-hero-desktop.jpg"
+          alt="Ruchi Desktop Hero"
+          className="w-full h-full object-cover hidden md:block"
         />
 
         {/* CTA Buttons - Positioned 150px from bottom */}
@@ -44,7 +52,7 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-            <div className="mx-2 mt-1">
+      <div className="mx-2 mt-1">
         <footer className="bg-white/95 backdrop-blur-sm border-[2px] border-[#6447D7] rounded-[15px] py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Order via Delivery Partners</h3>
@@ -59,7 +67,7 @@ const Home = () => {
                 Foodora
               </a>
               <a
-                href="https://www.ubereats.com/se/store/ruchi/fGanG7K0XcOetSwxZx1SlA?srsltid=AfmBOoqUrPgywqL2dXKuOFOuYlo5zjxYmIxVQhxTxnfwhF2kpqriLudm"
+                href="https://www.ubereats.com/se/store/ruchi/fGanG7K0XcOetSwxZx1SlA"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2 rounded-full bg-green-600 text-white hover:bg-green-700 text-sm font-semibold shadow"
@@ -67,7 +75,7 @@ const Home = () => {
                 Uber Eats
               </a>
               <a
-                href="https://wolt.com/sv/swe/boras/restaurant/ruchi?srsltid=AfmBOoq-KBKfKJBvWxM0bZmDt687OP9llVlqTWCN2UbmbMBrWylJC9Tb"
+                href="https://wolt.com/sv/swe/boras/restaurant/ruchi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-2 rounded-full bg-blue-600 text-white hover:bg-blue-700 text-sm font-semibold shadow"
@@ -82,7 +90,8 @@ const Home = () => {
           </div>
         </footer>
       </div>
-    </div> 
-  );}
+    </div>
+  );
+};
 
 export default Home;
