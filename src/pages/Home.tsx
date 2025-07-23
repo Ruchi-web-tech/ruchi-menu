@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import '../CtaButtonStyle.css'; // Make sure this path is correct
+import '../CtaButtonStyle.css'; // Adjust the path if needed
 
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-ruchi-cream">
       {/* Hero Section */}
-      <section className="relative w-full h-[calc(100vh-64px)]">
+      <section className="relative w-full h-screen">
         {/* Mobile Hero Image */}
         <img
           src="/ruchi-hero-mobile.jpg"
@@ -21,25 +21,24 @@ const Home = () => {
         />
 
         {/* Optional Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-0" />
 
         {/* CTA Buttons */}
-        <div className="absolute bottom-[150px] left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-4 justify-center items-center z-10">
-          {/* Explore Menu Button */}
-          <Link to="/menu">
-            <button className="cta-mi-button">
+        <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-3 px-4 w-full justify-center items-center z-10">
+          <Link to="/menu" className="w-full sm:w-auto text-center">
+            <button className="cta-mi-button w-full sm:w-auto">
               <span>Explore Menu</span>
               <div className="animation"></div>
             </button>
           </Link>
 
-          {/* Order Now Button */}
           <a
             href="https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order"
             target="_blank"
             rel="noopener noreferrer"
+            className="w-full sm:w-auto text-center"
           >
-            <button className="cta-mi-button">
+            <button className="cta-mi-button w-full sm:w-auto">
               <span>Order Now</span>
               <div className="animation"></div>
             </button>
@@ -48,14 +47,14 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <div className="mx-2 mt-1">
-        <footer className="bg-white/95 backdrop-blur-sm border-[2px] border-[#6447D7] rounded-[15px] py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+      <div className="mx-2 mt-2">
+        <footer className="bg-white/95 backdrop-blur-sm border-[2px] border-[#6447D7] rounded-[15px] py-8 px-4 sm:px-6">
+          <div className="max-w-7xl mx-auto text-center">
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-4">
               Order via Delivery Partners
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
               <a
                 href="https://www.foodora.se/restaurant/wvdo/ruchi"
                 target="_blank"
@@ -82,7 +81,7 @@ const Home = () => {
               </a>
             </div>
 
-            <p className="text-sm text-gray-500 mt-6">
+            <p className="text-xs sm:text-sm text-gray-500">
               © {new Date().getFullYear()} RUCHI. All rights reserved.
             </p>
           </div>
