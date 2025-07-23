@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import '../CtaButtonStyle.css'; // Make sure this path is correct
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between bg-ruchi-cream">
       {/* Hero Section */}
       <section className="relative w-full h-[calc(100vh-64px)]">
         {/* Mobile Hero Image */}
@@ -21,33 +20,30 @@ const Home = () => {
           className="w-full h-full object-cover hidden md:block"
         />
 
-        {/* CTA Buttons - Positioned 150px from bottom */}
-        <div className="absolute bottom-[150px] left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            asChild 
-            size="lg" 
-            className="bg-ruchi-blue hover:bg-ruchi-blue/90 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg"
+        {/* Optional Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-0" />
+
+        {/* CTA Buttons */}
+        <div className="absolute bottom-[150px] left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-4 justify-center items-center z-10">
+          {/* Explore Menu Button */}
+          <Link to="/menu">
+            <button className="cta-mi-button">
+              <span>Explore Menu</span>
+              <div className="animation"></div>
+            </button>
+          </Link>
+
+          {/* Order Now Button */}
+          <a
+            href="https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Link to="/menu" className="flex items-center gap-2">
-              Explore Menu
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </Button>
-          
-          <Button 
-            asChild 
-            size="lg"
-            className="bg-ruchi-blue hover:bg-ruchi-blue/90 text-white px-8 py-3 rounded-full text-lg font-medium shadow-lg"
-          >
-            <a 
-              href="https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              🛒 Order Now
-            </a>
-          </Button>
+            <button className="cta-mi-button">
+              <span>Order Now</span>
+              <div className="animation"></div>
+            </button>
+          </a>
         </div>
       </section>
 
@@ -55,7 +51,9 @@ const Home = () => {
       <div className="mx-2 mt-1">
         <footer className="bg-white/95 backdrop-blur-sm border-[2px] border-[#6447D7] rounded-[15px] py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Order via Delivery Partners</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              Order via Delivery Partners
+            </h3>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
