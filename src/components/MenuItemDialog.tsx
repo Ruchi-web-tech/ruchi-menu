@@ -1,4 +1,3 @@
-
 import { MenuItem } from '@/types/menu';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -35,11 +34,15 @@ const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-md mx-auto">
+      <DialogContent
+        className="max-w-md mx-auto bg-[#F5F3FF] rounded-xl shadow-lg"
+      >
         <DialogHeader>
-          <DialogTitle className="font-playfair text-xl">{item.name}</DialogTitle>
+          <DialogTitle className="font-playfair text-xl text-gray-800">
+            {item.name}
+          </DialogTitle>
         </DialogHeader>
-        
+
         <div className="space-y-4">
           {/* Image */}
           <div className="aspect-w-16 aspect-h-12 bg-gray-200 relative overflow-hidden rounded-lg">
@@ -72,16 +75,16 @@ const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {
           )}
 
           {/* Description */}
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             {item.description}
           </p>
 
           {/* Price */}
-          <div className="flex justify-between items-center pt-4 border-t">
+          <div className="flex justify-between items-center pt-4 border-t border-gray-300">
             <span className="font-bold text-2xl text-ruchi-blue">
-            {Math.round(item.price)} kr
+              {Math.round(item.price)} kr
             </span>
-            
+
             {!item.available && (
               <span className="text-red-500 text-sm font-medium">
                 Currently Unavailable
@@ -90,13 +93,13 @@ const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {
           </div>
 
           {/* Order Button */}
-          <Button 
-            asChild 
+          <Button
+            asChild
             className="w-full bg-ruchi-blue hover:bg-ruchi-blue/90 text-white"
           >
-            <a 
-              href="https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order" 
-              target="_blank" 
+            <a
+              href="https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order"
+              target="_blank"
               rel="noopener noreferrer"
             >
               🛒 Order This Item
