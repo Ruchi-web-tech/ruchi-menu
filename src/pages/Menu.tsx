@@ -28,13 +28,15 @@ const Menu = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-5 md:px-6 lg:px-8 py-6 sm:py-8">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
-          <h1 className="font-playfair font-bold text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-3">
-            Our Menu
+          <h1 className="font-montserrat text-5xl md:text-6xl font-extrabold text-ruchi-blue mb-6 tracking-tighter leading-tight">
+          Our Menu
           </h1>
-          <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-5">
+
+
+          <h2 className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-5">
             We keep it casual, creative, and seriously tasty. <br />
             It’s all about mixing things up!!!
-          </p>
+          </h2>
 
           {/* Order Now Button */}
           <Button

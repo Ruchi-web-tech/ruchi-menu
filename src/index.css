@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,20 +44,18 @@
     --sidebar-border: 229 229 229;
     --sidebar-ring: 100 71 215;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-ruchi-cream text-foreground font-inter;
+    @apply bg-ruchi-cream text-foreground font-sans; /* Inter for body */
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+    @apply font-heading; /* Rubik Mono One for headings */
   }
 }
 
@@ -66,3 +64,17 @@
     text-wrap: balance;
   }
 }
+@layer utilities {
+  .font-heading-1 {
+    @apply font-montserrat text-4xl font-black tracking-tight;
+  }
+
+  .font-heading-2 {
+    @apply font-montserrat text-2xl font-bold tracking-wide;
+  }
+
+  .font-body {
+    @apply font-montserrat text-base font-light leading-relaxed;
+  }
+}
+

@@ -8,7 +8,6 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -62,7 +61,6 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        // RUCHI Brand Colors
         ruchi: {
           cream: '#FBF5E9',
           blue: '#6447D7',
@@ -73,11 +71,10 @@ export default {
         }
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        playfair: ['"Playfair Display"', 'serif'],
-        concert: ['"Concert One"', 'cursive'],
-        baloo: ['"Baloo 2"', 'cursive'], // newly added playful font
-      },
+  sans: ['Inter', 'sans-serif'], // For body text
+  heading: ['"Rubik Mono One"', 'sans-serif'], // For headings
+},
+
       aspectRatio: {
         '16/9': '16 / 9',
         '4/3': '4 / 3',
