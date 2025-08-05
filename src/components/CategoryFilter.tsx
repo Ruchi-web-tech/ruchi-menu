@@ -41,7 +41,9 @@ const CategoryFilter = () => {
       {selectedCategoryData?.subcategories && (
         <div className="flex flex-wrap gap-2 pl-4">
           <Button
-            variant={selectedSubcategory === null ? 'secondary' : 'outline'}
+            variant={
+              selectedSubcategory === null ? 'secondary' : 'outlineBlue'
+            }
             onClick={() => setSelectedSubcategory(null)}
             size="sm"
           >
@@ -53,7 +55,7 @@ const CategoryFilter = () => {
               variant={
                 selectedSubcategory === subcategory.id
                   ? 'secondary'
-                  : 'outline'
+                  : 'outlineBlue'
               }
               onClick={() => setSelectedSubcategory(subcategory.id)}
               size="sm"
