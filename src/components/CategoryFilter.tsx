@@ -1,5 +1,5 @@
-import { useMenuStore } from '@/store/menuStore';
-import { Button } from '@/components/ui/button';
+import { useMenuStore } from '@/store/menuStore'
+import { Button } from '@/components/ui/button'
 
 const CategoryFilter = () => {
   const {
@@ -7,38 +7,30 @@ const CategoryFilter = () => {
     selectedCategory,
     selectedSubcategory,
     setSelectedCategory,
-    setSelectedSubcategory
-  } = useMenuStore();
+    setSelectedSubcategory,
+  } = useMenuStore()
 
   const selectedCategoryData = categories.find(
     (cat) => cat.id === selectedCategory
-  );
+  )
 
   return (
     <div className="mb-6">
       {/* Main Categories */}
       <div className="flex flex-wrap gap-2 mb-4">
         <Button
-          variant={selectedCategory === null ? 'default' : 'outline'}
+          variant={selectedCategory === null ? 'secondary' : 'outline'}
           onClick={() => setSelectedCategory(null)}
-          className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
-            selectedCategory === null
-              ? 'bg-ruchi-purple text-white hover:bg-ruchi-purple/90'
-              : 'border-ruchi-purple/40 text-ruchi-purple hover:bg-ruchi-purple/10'
-          }`}
+          size="sm"
         >
           All
         </Button>
         {categories.map((category) => (
           <Button
             key={category.id}
-            variant={selectedCategory === category.id ? 'default' : 'outline'}
+            variant={selectedCategory === category.id ? 'secondary' : 'outline'}
             onClick={() => setSelectedCategory(category.id)}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
-              selectedCategory === category.id
-                ? 'bg-ruchi-purple text-white hover:bg-ruchi-purple/90'
-                : 'border-ruchi-purple/40 text-ruchi-purple hover:bg-ruchi-purple/10'
-            }`}
+            size="sm"
           >
             {category.name}
           </Button>
@@ -52,11 +44,6 @@ const CategoryFilter = () => {
             variant={selectedSubcategory === null ? 'secondary' : 'outline'}
             onClick={() => setSelectedSubcategory(null)}
             size="sm"
-            className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
-              selectedSubcategory === null
-                ? 'bg-ruchi-purple text-white hover:bg-ruchi-purple/90'
-                : 'border-ruchi-purple/40 text-ruchi-purple hover:bg-ruchi-purple/10'
-            }`}
           >
             All {selectedCategoryData.name}
           </Button>
@@ -64,15 +51,12 @@ const CategoryFilter = () => {
             <Button
               key={subcategory.id}
               variant={
-                selectedSubcategory === subcategory.id ? 'secondary' : 'outline'
+                selectedSubcategory === subcategory.id
+                  ? 'secondary'
+                  : 'outline'
               }
               onClick={() => setSelectedSubcategory(subcategory.id)}
               size="sm"
-              className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
-                selectedSubcategory === subcategory.id
-                  ? 'bg-ruchi-purple text-white hover:bg-ruchi-purple/90'
-                  : 'border-ruchi-purple/40 text-ruchi-purple hover:bg-ruchi-purple/10'
-              }`}
             >
               {subcategory.name}
             </Button>
@@ -80,7 +64,7 @@ const CategoryFilter = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default CategoryFilter;
+export default CategoryFilter
