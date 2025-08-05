@@ -21,10 +21,10 @@ const CategoryFilter = () => {
         <Button
           variant={selectedCategory === null ? 'default' : 'outline'}
           onClick={() => setSelectedCategory(null)}
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+          className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
             selectedCategory === null
-              ? 'bg-ruchi-blue text-white hover:bg-ruchi-blue/90'
-              : 'border-ruchi-blue/20 text-ruchi-blue hover:bg-ruchi-blue/10'
+              ? 'bg-ruchi-purple text-white hover:bg-ruchi-purple/90'
+              : 'border-ruchi-purple/40 text-ruchi-purple hover:bg-ruchi-purple/10'
           }`}
         >
           All
@@ -34,10 +34,10 @@ const CategoryFilter = () => {
             key={category.id}
             variant={selectedCategory === category.id ? 'default' : 'outline'}
             onClick={() => setSelectedCategory(category.id)}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${
+            className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
               selectedCategory === category.id
-                ? 'bg-ruchi-blue text-white hover:bg-ruchi-blue/90'
-                : 'border-ruchi-blue/20 text-ruchi-blue hover:bg-ruchi-blue/10'
+                ? 'bg-ruchi-purple text-white hover:bg-ruchi-purple/90'
+                : 'border-ruchi-purple/40 text-ruchi-purple hover:bg-ruchi-purple/10'
             }`}
           >
             {category.name}
