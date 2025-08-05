@@ -19,7 +19,7 @@ const CategoryFilter = () => {
       {/* Main Categories */}
       <div className="flex flex-wrap gap-2 mb-4">
         <Button
-          variant={selectedCategory === null ? 'secondary' : 'outline'}
+          variant={selectedCategory === null ? 'secondary' : 'outlineBlue'}
           onClick={() => setSelectedCategory(null)}
           size="sm"
         >
@@ -28,7 +28,7 @@ const CategoryFilter = () => {
         {categories.map((category) => (
           <Button
             key={category.id}
-            variant={selectedCategory === category.id ? 'secondary' : 'outline'}
+            variant={selectedCategory === category.id ? 'secondary' : 'outlineBlue'}
             onClick={() => setSelectedCategory(category.id)}
             size="sm"
           >
@@ -41,9 +41,7 @@ const CategoryFilter = () => {
       {selectedCategoryData?.subcategories && (
         <div className="flex flex-wrap gap-2 pl-4">
           <Button
-            variant={
-              selectedSubcategory === null ? 'secondary' : 'outlineBlue'
-            }
+            variant={selectedSubcategory === null ? 'secondary' : 'outlineBlue'}
             onClick={() => setSelectedSubcategory(null)}
             size="sm"
           >
