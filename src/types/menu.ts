@@ -1,16 +1,16 @@
-
 export interface MenuItem {
   id: string;
   name: string;
   description: string;
   price: number;
   image?: string;
-  category: string;
-  subcategory?: string;
+  categories: string[];         // changed from `category: string`
+  subcategories?: string[];     // changed from `subcategory: string`
   tags?: string[];
   available: boolean;
   created_at?: string;
 }
+
 
 export interface MenuSubcategory {
   id: string;

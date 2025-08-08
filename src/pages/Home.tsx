@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import '../CtaButtonStyle.css'; // adjust if needed
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-ruchi-cream pb-20">
+    <div className="min-h-screen flex flex-col justify-between bg-ruchi-purple pb-19">
       {/* Hero Section */}
       <section className="relative w-full h-screen">
         {/* Mobile Hero Image */}
@@ -26,9 +25,8 @@ const Home = () => {
         {/* CTA Buttons */}
         <div className="absolute bottom-24 left-1/2 transform -translate-x-1/2 flex flex-col sm:flex-row gap-3 px-4 w-full justify-center items-center z-10">
           <Link to="/menu" className="w-full sm:w-auto text-center">
-            <button className="cta-mi-button w-full sm:w-auto">
-              <span>Explore Menu</span>
-              <div className="animation"></div>
+            <button className="w-full sm:w-auto bg-ruchi-cream text-gray-900 hover:bg-ruchi-blue/90 px-6 py-3 rounded-full font-medium shadow-md transition-all duration-200">
+              Explore Menu
             </button>
           </Link>
 
@@ -38,9 +36,8 @@ const Home = () => {
             rel="noopener noreferrer"
             className="w-full sm:w-auto text-center"
           >
-            <button className="cta-mi-button w-full sm:w-auto">
-              <span>Order Now</span>
-              <div className="animation"></div>
+            <button className="w-full sm:w-auto bg-ruchi-cream text-gray-900 hover:bg-ruchi-blue/90 px-6 py-3 rounded-full font-medium shadow-md transition-all duration-200">
+              Order Now
             </button>
           </a>
         </div>

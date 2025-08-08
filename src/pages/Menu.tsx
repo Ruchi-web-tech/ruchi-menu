@@ -13,9 +13,16 @@ const Menu = () => {
 
   const filteredItems = menuItems.filter((item) => {
     if (!item.available) return false;
-    if (selectedCategory && item.category !== selectedCategory) return false;
-    if (selectedSubcategory && item.subcategory !== selectedSubcategory) return false;
-    return true;
+
+    const categoryMatch = selectedCategory
+      ? item.categories.includes(selectedCategory)
+      : true;
+
+    const subcategoryMatch = selectedSubcategory
+      ? (item.subcategories || []).includes(selectedSubcategory)
+      : true;
+
+    return categoryMatch && subcategoryMatch;
   });
 
   const handleItemClick = (item: MenuItem) => {
@@ -29,9 +36,8 @@ const Menu = () => {
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">
           <h1 className="font-montserrat text-5xl md:text-6xl font-extrabold text-ruchi-blue mb-6 tracking-tighter leading-tight">
-          Our Menu
+            Our Menu
           </h1>
-
 
           <h2 className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-5">
             We keep it casual, creative, and seriously tasty. <br />

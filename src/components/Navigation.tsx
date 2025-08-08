@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -18,13 +17,12 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-[2px] border-[#6447D7] rounded-[15px] mx-1 mt-1">
+    <nav className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 mx-0 mt-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img src="/logo.png" alt="RUCHI Logo" className="h-8 w-auto" />
-
           </Link>
 
           {/* Desktop Navigation */}
@@ -60,7 +58,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden animate-slide-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-ruchi-cream">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
