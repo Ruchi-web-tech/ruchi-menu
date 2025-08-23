@@ -1,4 +1,3 @@
-
 import { MenuItem } from '@/types/menu';
 import { Badge } from '@/components/ui/badge';
 
@@ -65,7 +64,7 @@ const MenuCard = ({ item, onClick }: MenuCardProps) => {
             {item.name}
           </h3>
           <span className="font-bold text-ruchi-blue text-lg ml-2">
-           {Math.round(item.price)} kr
+            {item.priceLabel ? item.priceLabel : `${Math.round(item.price)} kr`}
           </span>
         </div>
         

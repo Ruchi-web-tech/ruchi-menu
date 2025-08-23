@@ -3,13 +3,15 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
+  priceLabel?: string;   // 👈 New optional field
   image?: string;
-  categories: string[];         // changed from `category: string`
-  subcategories?: string[];     // changed from `subcategory: string`
+  categories: string[];   // (already updated for multi-category)
+  subcategories?: string[];
   tags?: string[];
   available: boolean;
   created_at?: string;
 }
+
 
 
 export interface MenuSubcategory {
