@@ -84,7 +84,7 @@ const sampleMenuItems: MenuItem[] = [
     subcategories: ['warm-options', 'meat'], // ✅ now supports multiple subcategories
     tags: ['NEW'],
     available: true,
-    image: '/images/holy-cow.jpg',
+    image: '/images/holy-cow.PNG',
   },
   {
     id: '2',
