@@ -442,17 +442,6 @@ const sampleMenuItems: MenuItem[] = [
     available: true,
     image: '/images/ume.PNG',
   },
-  {
-    id: '34',
-    name: 'Kimino UME',
-    description: 'Sparkling Water, Wakayama Pressed Ume, Organic Sugar cane',
-    price: 45,
-    categories: ['drinks'],
-    subcategories: [''],
-    tags: [],
-    available: true,
-    image: '/images/ume.PNG',
-  },
 ];
 
 export const useMenuStore = create<MenuState>((set) => ({
