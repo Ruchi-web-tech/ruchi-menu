@@ -265,7 +265,7 @@ const sampleMenuItems: MenuItem[] = [
   {
     id: '18',
     name: 'What The Fish',
-    description: 'Tamago (ägg), Gurka, Avokado. Toppad med: Halstrad miso lax, Aioli, Salladslök, Ingefära',
+    description: 'Tamago (ägg), Gurka, Avokado. Toppad med: Halstrad miso lax, Aioli, Salladslök',
     price: 105,
     categories: ['sushi'],
     subcategories: ['maki','fish'],
@@ -276,13 +276,13 @@ const sampleMenuItems: MenuItem[] = [
   {
     id: '19',
     name: 'Kim Jong',
-    description: 'Tamago (ägg), Gurka, Avokado. Toppad med: Halstrad miso lax, Aioli, Salladslök, Ingefära',
+    description: 'Yakiniku Entrecôte, tamago, gochujang glaze. Topped with green onions and teriyaki.',
     price: 105,
     categories: ['sushi'],
     subcategories: ['maki','fish'],
     tags: [],
     available: true,
-    image: '/images/wtf.JPG',
+    image: '/images/kim-jong.JPG',
   },
   {
   id: '20',
