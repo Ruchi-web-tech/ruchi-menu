@@ -42,7 +42,19 @@ const Home = () => {
           </a>
         </div>
       </section>
-
+      {/* Video Section */}
+      <section className="relative w-full bg-white">
+        <video
+          className="w-full h-[300px] object-cover"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
       {/* Delivery Partner Footer */}
       <footer className="bg-white border-t border-gray-200 shadow-md pt-4 pb-6 px-6 z-50">
         <div className="flex justify-center gap-8 items-center mb-4">
