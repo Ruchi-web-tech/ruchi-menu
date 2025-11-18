@@ -78,7 +78,7 @@ const sampleMenuItems: MenuItem[] = [
   {
     id: '1',
     name: 'Holy Cow',
-    description: 'Yakiniku Entrecôte, Salad mix...',
+    description: 'Yakiniku Entrecôte, Salad mix. Kimchi cabbage, Cucumber, Radishes, Chilli mayonnaise, Gochujang glaze, Green onions, Rice puffs',
     price: 140,
     categories: ['salads'],
     subcategories: ['warm-options', 'meat'], // ✅ now supports multiple subcategories
