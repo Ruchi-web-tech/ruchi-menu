@@ -22,22 +22,23 @@ const RotatingText = ({ className = '' }: { className?: string }) => {
     <div className={`flex flex-wrap items-baseline gap-x-4 gap-y-1 ${className}`}>
       <span className="font-sans text-lg font-medium text-ruchi-cream md:text-[28px]">Creative</span>
 
-      {/* Sizes in em so the rolling window always matches the font size */}
-      <span
+      {/* divs, not spans: the site-wide span style would reset the font size.
+          Sizes are in em so the rolling window always matches the font size. */}
+      <div
         className="relative inline-block h-[0.95em] overflow-hidden font-display text-[64px] font-black leading-none tracking-[-0.05em] md:text-[104px]"
-        aria-live="off"
+        aria-hidden="true"
       >
-        <span
-          className="block transition-transform duration-700 ease-in-out"
+        <div
+          className="transition-transform duration-700 ease-in-out"
           style={{ transform: `translateY(-${index * 0.95}em)` }}
         >
           {words.map((word) => (
-            <span key={word.text} className={`block h-[0.95em] font-display leading-[0.95] ${word.color}`}>
+            <div key={word.text} className={`h-[0.95em] leading-[0.95] ${word.color}`}>
               {word.text}
-            </span>
+            </div>
           ))}
-        </span>
-      </span>
+        </div>
+      </div>
       <span className="sr-only">Bowl, bao, sushi, sando</span>
     </div>
   )
