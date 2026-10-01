@@ -56,7 +56,7 @@ const About = () => {
                 <Phone className="h-5 w-5 text-ruchi-blue mt-0.5" />
                 <div>
                   <p className="font-medium text-gray-900">Phone</p>
-                  <p className="text-gray-600">(46) 0763987181</p>
+                  <a href="tel:+46760989538" className="text-gray-600 hover:text-ruchi-blue">076-098 95 38</a>
                 </div>
               </div>
             </div>
