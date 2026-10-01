@@ -74,7 +74,7 @@ const Home = () => {
         </div>
 
         {/* CURVED TEXT */}
-        <div className="relative -mt-1 -mb-4 w-screen overflow-hidden">
+        <div className="relative w-full overflow-hidden">
 
           <CurvedLoop
             marqueeText="✦✦ Born in the north ✦ inspired by Asia ✦✦"
@@ -87,7 +87,7 @@ const Home = () => {
               font-black
               uppercase
               tracking-[-0.08em]
-              text-[24px]
+              text-[36px]
               sm:text-[48px]
               md:text-[72px]
               lg:text-[88px]
