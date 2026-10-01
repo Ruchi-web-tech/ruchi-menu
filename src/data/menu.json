@@ -47,7 +47,6 @@
       "warm-options",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/miso-salmon.jpg"
   },
@@ -62,7 +61,6 @@
     "subcategories": [
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/the-shrimp.jpg"
   },
@@ -80,7 +78,6 @@
       "fish",
       "pick-your-protein"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/caesar-me.jpg"
   },
@@ -134,7 +131,6 @@
     "subcategories": [
       "regular"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/chick-n-crunch.jpeg"
   },
@@ -219,7 +215,6 @@
       "maki",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/luigi.jpg"
   },
@@ -235,7 +230,6 @@
       "maki",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/see-me-rollin.jpg"
   },
@@ -269,7 +263,6 @@
       "maki",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/wtf.jpg"
   },
@@ -285,7 +278,6 @@
       "maki",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/kim-jong.jpg"
   },
@@ -319,7 +311,6 @@
       "nigiri",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/lax-nigiri.jpeg"
   },
@@ -335,7 +326,6 @@
       "nigiri",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/miso-lax-nigiri.jpg"
   },
@@ -351,7 +341,6 @@
       "nigiri",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/truffled-lax-nigiri.jpg"
   },
@@ -367,7 +356,6 @@
       "mix",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/12-bites.jpeg"
   },
@@ -383,7 +371,6 @@
       "mix",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/16-bites.jpg"
   },
@@ -399,7 +386,6 @@
       "mix",
       "fish"
     ],
-    "tags": [],
     "available": true,
     "image": "/images/30-bites.png"
   },
@@ -411,7 +397,6 @@
     "categories": [
       "sides"
     ],
-    "subcategories": [],
     "tags": [
       "Popular"
     ],
@@ -426,7 +411,6 @@
     "categories": [
       "sides"
     ],
-    "subcategories": [],
     "tags": [
       "Popular"
     ],
@@ -441,8 +425,6 @@
     "categories": [
       "sides"
     ],
-    "subcategories": [],
-    "tags": [],
     "available": true,
     "image": "/images/wakame.jpg"
   },
@@ -454,8 +436,6 @@
     "categories": [
       "sides"
     ],
-    "subcategories": [],
-    "tags": [],
     "available": true,
     "image": "/images/mango-salsa.jpg"
   },
@@ -467,8 +447,6 @@
     "categories": [
       "sides"
     ],
-    "subcategories": [],
-    "tags": [],
     "available": true,
     "image": "/images/avocado-smash.jpg"
   },
@@ -480,8 +458,6 @@
     "categories": [
       "sides"
     ],
-    "subcategories": [],
-    "tags": [],
     "available": true,
     "image": "/images/miso-soup.jpg"
   },
@@ -493,9 +469,7 @@
     "categories": [
       "drinks"
     ],
-    "subcategories": [],
-    "tags": [],
-    "available": true,
+    "available": false,
     "image": "/images/ume.png"
   }
 ]
