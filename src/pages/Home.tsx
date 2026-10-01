@@ -29,21 +29,20 @@ const Home = () => {
         {/* CTA BUTTONS */}
         <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col sm:flex-row gap-3 px-4 w-full justify-center items-center z-10">
           
-          <Link to="/menu" className="w-full sm:w-auto text-center">
-            <button className="w-full sm:w-auto bg-ruchi-cream text-gray-900 hover:bg-ruchi-blue hover:text-white px-7 py-3 rounded-full font-medium shadow-xl transition-all duration-300 hover:scale-105">
-              Explore Menu
-            </button>
+          <Link
+            to="/menu"
+            className="inline-block w-full sm:w-auto text-center bg-ruchi-cream text-gray-900 hover:bg-ruchi-blue hover:text-white px-7 py-3 rounded-full font-medium shadow-xl transition-all duration-300 hover:scale-105"
+          >
+            Explore Menu
           </Link>
 
           <a
             href="https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto text-center"
+            className="inline-block w-full sm:w-auto text-center bg-ruchi-cream text-gray-900 hover:bg-ruchi-blue hover:text-white px-7 py-3 rounded-full font-medium shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <button className="w-full sm:w-auto bg-ruchi-cream text-gray-900 hover:bg-ruchi-blue hover:text-white px-7 py-3 rounded-full font-medium shadow-xl transition-all duration-300 hover:scale-105">
-              Order Now
-            </button>
+            Order Now
           </a>
 
         </div>

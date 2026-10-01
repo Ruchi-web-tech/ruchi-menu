@@ -48,7 +48,7 @@ const MenuCard = ({ item, onClick }: MenuCardProps) => {
             {item.tags.map((tag) => (
               <Badge
                 key={tag}
-                variant="secondary"
+                variant="outline"
                 className={`text-xs px-2 py-1 ${getTagColor(tag)}`}
               >
                 {tag}
