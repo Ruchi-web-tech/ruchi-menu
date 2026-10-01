@@ -1,0 +1,12 @@
+{
+  "address": "Druveforsvägen 13A",
+  "postalCity": "504 33 Borås, Sweden",
+  "phone": "076-098 95 38",
+  "hours": [
+    { "days": "Mon–Thu", "time": "11:00–20:00" },
+    { "days": "Fri", "time": "11:00–21:00" },
+    { "days": "Sat", "time": "11:00–20:00" },
+    { "days": "Sun", "time": "Closed" }
+  ],
+  "instagram": "https://www.instagram.com/ruchi_room/"
+}
