@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useMenuStore } from '@/store/menuStore';
 import MenuCard from '@/components/MenuCard';
 import MenuItemDialog from '@/components/MenuItemDialog';
+import SiteFooter from '@/components/SiteFooter';
 import { MenuItem } from '@/types/menu';
 import { todaysHours } from '@/lib/hours';
 import { cn } from '@/lib/utils';
@@ -63,6 +65,14 @@ const Menu = () => {
     return () => observer.disconnect();
   }, [sections]);
 
+  // Arriving from a Home tile (e.g. /menu#cat-sushi): jump to that section
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (!hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (el) el.scrollIntoView({ block: 'start' });
+  }, [hash, sections.length]);
+
   const jumpTo = (id: string) => {
     setActive(id);
     document.getElementById(`cat-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -109,7 +119,7 @@ const Menu = () => {
         {/* Category buttons — stick under the main navigation while scrolling */}
         <nav
           aria-label="Menu categories"
-          className="no-scrollbar sticky top-16 z-30 -mx-3 flex gap-2 overflow-x-auto bg-ruchi-cream px-3 pb-3 pt-4 sm:mx-0 sm:px-0 md:flex-wrap md:gap-2.5 md:pb-4 md:pt-6"
+          className="no-scrollbar sticky top-16 z-30 md:top-20 -mx-3 flex gap-2 overflow-x-auto bg-ruchi-cream px-3 pb-3 pt-4 sm:mx-0 sm:px-0 md:flex-wrap md:gap-2.5 md:pb-4 md:pt-6"
         >
           {sections.map((s) => (
             <button
@@ -155,7 +165,7 @@ const Menu = () => {
         </div>
 
         {/* Order band (tablet/desktop) */}
-        <section className="grain my-12 hidden flex-wrap items-center justify-between gap-6 rounded-[40px] bg-ruchi-ink px-12 py-10 text-ruchi-cream md:mb-12 md:mt-[72px] md:flex">
+        <section className="grain mb-10 mt-12 hidden flex-wrap items-center justify-between gap-6 rounded-[40px] bg-ruchi-ink px-12 py-10 text-ruchi-cream md:mb-12 md:mt-[72px] md:flex">
           <h2 className="font-display text-[40px] font-black uppercase leading-none tracking-[-0.03em]">Hungry yet?</h2>
           <div className="flex flex-wrap items-center gap-3">
             <a
@@ -180,6 +190,8 @@ const Menu = () => {
           </div>
         </section>
       </div>
+
+      <SiteFooter />
 
       {/* Sticky order button (phones) */}
       <div className="fixed inset-x-0 bottom-0 z-40 bg-gradient-to-t from-ruchi-cream via-ruchi-cream/90 to-transparent px-3 pb-5 pt-6 md:hidden">
