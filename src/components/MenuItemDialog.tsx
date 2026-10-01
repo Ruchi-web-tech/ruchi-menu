@@ -1,6 +1,7 @@
 import { MenuItem } from '@/types/menu';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { formatPrice } from '@/lib/utils';
 import {
   Dialog,
   DialogContent,
@@ -82,7 +83,7 @@ const MenuItemDialog = ({ item, open, onOpenChange }: MenuItemDialogProps) => {
           {/* Price */}
           <div className="flex justify-between items-center pt-4 border-t border-gray-300">
             <span className="font-bold text-2xl text-ruchi-blue">
-              {Math.round(item.price)} kr
+              {formatPrice(item)}
             </span>
 
             {!item.available && (

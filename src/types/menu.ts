@@ -3,7 +3,8 @@ export interface MenuItem {
   name: string;
   description: string;
   price: number;
-  priceLabel?: string;   // 👈 New optional field
+  priceFrom?: boolean;   // true → shown as "from 85 kr" (price varies, e.g. by piece count)
+  priceLabel?: string;   // optional custom text that replaces the price completely
   image?: string;
   categories: string[];   // (already updated for multi-category)
   subcategories?: string[];

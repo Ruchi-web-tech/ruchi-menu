@@ -1,5 +1,6 @@
 import { MenuItem } from '@/types/menu';
 import { Badge } from '@/components/ui/badge';
+import { formatPrice } from '@/lib/utils';
 
 interface MenuCardProps {
   item: MenuItem;
@@ -63,8 +64,8 @@ const MenuCard = ({ item, onClick }: MenuCardProps) => {
           <h3 className="font-playfair font-semibold text-lg text-gray-900 line-clamp-1">
             {item.name}
           </h3>
-          <span className="font-bold text-ruchi-blue text-lg ml-2">
-            {item.priceLabel ? item.priceLabel : `${Math.round(item.price)} kr`}
+          <span className="font-bold text-ruchi-blue text-lg ml-2 whitespace-nowrap">
+            {formatPrice(item)}
           </span>
         </div>
         
