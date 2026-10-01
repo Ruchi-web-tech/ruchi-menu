@@ -40,38 +40,45 @@ const sushiSubcategories: MenuSubcategory[] = [
 
 // Sample data for development
 const sampleCategories: MenuCategory[] = [
-  { 
-    id: 'salads', 
-    name: 'Salads', 
-    description: 'Fresh & Healthy', 
+  {
+    // id stays 'salads' so existing dishes keep their category
+    id: 'salads',
+    name: 'Bowls',
+    description: 'Fresh & Healthy',
     order: 1,
     subcategories: saladSubcategories
   },
-  { 
-    id: 'bao', 
-    name: 'Bao', 
-    description: 'Steamed Buns', 
+  {
+    id: 'bao',
+    name: 'Bao',
+    description: 'Steamed Buns',
     order: 2,
     subcategories: baoSubcategories
   },
-  { 
-    id: 'sushi', 
-    name: 'Sushi', 
-    description: 'Fresh Rolls', 
+  {
+    id: 'sushi',
+    name: 'Sushi',
+    description: 'Fresh Rolls',
     order: 3,
     subcategories: sushiSubcategories
   },
-  { 
-    id: 'sides', 
-    name: 'Sides', 
-    description: 'Perfect Accompaniments', 
-    order: 4 
+  {
+    id: 'sando',
+    name: 'Sando',
+    description: 'Sandwiches',
+    order: 4
   },
-  { 
-    id: 'drinks', 
-    name: 'Drinks', 
-    description: 'Refreshing Beverages', 
-    order: 5 
+  {
+    id: 'sides',
+    name: 'Sides',
+    description: 'Perfect Accompaniments',
+    order: 5
+  },
+  {
+    id: 'drinks',
+    name: 'Drinks',
+    description: 'Refreshing Beverages',
+    order: 6
   },
 ];
 

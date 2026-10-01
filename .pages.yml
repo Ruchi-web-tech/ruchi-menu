@@ -44,11 +44,13 @@ content:
           multiple: true
           values:
             - name: salads
-              label: Salads
+              label: Bowls
             - name: bao
               label: Bao
             - name: sushi
               label: Sushi
+            - name: sando
+              label: Sando
             - name: sides
               label: Sides
             - name: drinks
@@ -56,7 +58,7 @@ content:
 
       - name: subcategories
         label: Subcategory
-        description: "Salads: Warm Options, Pick Your Protein, Plant Based, Meat, Fish · Bao: Regular, Plant based · Sushi: Maki, Nigiri, Mix"
+        description: "Bowls: Warm Options, Pick Your Protein, Plant Based, Meat, Fish · Bao: Regular, Plant based · Sushi: Maki, Nigiri, Mix"
         type: select
         options:
           multiple: true
