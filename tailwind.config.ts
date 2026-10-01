@@ -68,12 +68,14 @@ export default {
           pink: '#F792C1',
           purple: '#a393ec',
           turquoise: '#0ecec4',
+          ink: '#1B1433',
         },
       },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],
         heading: ['Montserrat', 'sans-serif'],
         sans: ['Montserrat', 'sans-serif'], // fallback default
+        display: ['Unbounded', '"Arial Black"', 'system-ui', 'sans-serif'], // chunky headings, echoes the logo
       },
       aspectRatio: {
         '16/9': '16 / 9',

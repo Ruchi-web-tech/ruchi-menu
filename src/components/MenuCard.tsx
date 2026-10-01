@@ -1,85 +1,86 @@
 import { MenuItem } from '@/types/menu';
-import { Badge } from '@/components/ui/badge';
-import { formatPrice } from '@/lib/utils';
+import { cn, formatPrice } from '@/lib/utils';
 
 interface MenuCardProps {
   item: MenuItem;
   onClick: () => void;
 }
 
+/** Tag pill colours — each readable on white and on the photo. */
+const TAG_STYLES: Record<string, string> = {
+  NEW: 'bg-ruchi-yellow text-ruchi-ink',
+  Popular: 'bg-ruchi-ink text-ruchi-cream',
+  VGN: 'bg-[#DDF5E6] text-[#155C33]',
+  VEG: 'bg-[#DDF5E6] text-[#155C33]',
+  'Vegan Option': 'bg-[#DDF5E6] text-[#155C33]',
+  GF: 'bg-[#DCEBFF] text-[#1D4E9E]',
+  SPICY: 'bg-[#FFE1DA] text-[#A32A12]',
+};
+
+const tagClass = (tag: string) =>
+  cn(
+    'inline-flex items-center rounded-full font-sans font-bold tracking-wide leading-none',
+    TAG_STYLES[tag] ?? 'bg-ruchi-cream text-ruchi-ink'
+  );
+
+/**
+ * Phone: compact row (photo left, text right) so the menu scrolls fast.
+ * Tablet/desktop: big square photo on top, tag on the photo, price pill.
+ */
 const MenuCard = ({ item, onClick }: MenuCardProps) => {
-  const getTagColor = (tag: string) => {
-    switch (tag) {
-      case 'VGN':
-        return 'bg-green-100 text-green-800 border-green-200';
-      case 'GF':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'NEW':
-        return 'bg-ruchi-yellow text-gray-900 border-ruchi-yellow';
-      case 'SPICY':
-        return 'bg-red-100 text-red-800 border-red-200';
-      default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
-    }
-  };
+  const tags = item.tags ?? [];
+  const [firstTag] = tags;
 
   return (
-    <div 
-      className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group cursor-pointer"
+    <button
+      type="button"
       onClick={onClick}
+      className="group flex w-full gap-3 rounded-3xl bg-white p-2.5 text-left transition-shadow duration-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ruchi-blue md:flex-col md:gap-3.5 md:rounded-[32px] md:p-3 md:pb-5"
     >
-      {/* Image */}
-      <div className="aspect-w-16 aspect-h-12 bg-gray-200 relative overflow-hidden">
+      {/* Photo */}
+      <div className="relative h-[108px] w-[108px] flex-shrink-0 overflow-hidden rounded-[18px] bg-ruchi-cream md:aspect-square md:h-auto md:w-full md:rounded-3xl">
         {item.image ? (
           <img
             src={item.image}
             alt={item.name}
-            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-48 bg-gradient-to-br from-ruchi-cream to-ruchi-purple/20 flex items-center justify-center">
-            <span className="text-gray-500 font-medium">No Image</span>
-          </div>
+          <div className="grain h-full w-full bg-ruchi-purple/40" />
         )}
-        
-        {/* Tags overlay */}
-        {item.tags && item.tags.length > 0 && (
-          <div className="absolute top-3 left-3 flex flex-wrap gap-1">
-            {item.tags.map((tag) => (
-              <Badge
-                key={tag}
-                variant="outline"
-                className={`text-xs px-2 py-1 ${getTagColor(tag)}`}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
+        {firstTag && (
+          <span className={cn(tagClass(firstTag), 'absolute left-3.5 top-3.5 hidden h-7 px-3 text-xs md:inline-flex')}>
+            {firstTag}
+          </span>
         )}
       </div>
-      
-      {/* Content */}
-      <div className="p-4">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="font-playfair font-semibold text-lg text-gray-900 line-clamp-1">
-            {item.name}
-          </h3>
-          <span className="font-bold text-ruchi-blue text-lg ml-2 whitespace-nowrap">
+
+      {/* Text */}
+      <div className="flex min-w-0 flex-1 flex-col gap-1.5 py-0.5 pr-1 md:gap-2 md:px-2 md:py-0">
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <h3 className="font-display text-base font-extrabold leading-tight tracking-tight text-ruchi-ink md:text-[22px]">
+              {item.name}
+            </h3>
+            {firstTag && (
+              <span className={cn(tagClass(firstTag), 'h-5 px-2 text-[10.5px] md:hidden')}>{firstTag}</span>
+            )}
+          </div>
+          <span className="hidden h-8 flex-shrink-0 items-center rounded-full bg-ruchi-ink px-3.5 font-sans text-sm font-bold text-ruchi-cream md:inline-flex">
             {formatPrice(item)}
           </span>
         </div>
-        
-        <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+
+        <p className="line-clamp-2 font-sans text-[12.5px] font-normal leading-snug text-[#4A4360] md:line-clamp-3 md:text-sm md:leading-relaxed">
           {item.description}
         </p>
-        
-        {!item.available && (
-          <div className="mt-3 text-red-500 text-sm font-medium">
-            Currently Unavailable
-          </div>
-        )}
+
+        <span className="mt-auto inline-flex h-7 w-fit items-center rounded-full bg-ruchi-ink px-3 font-sans text-[13px] font-bold text-ruchi-cream md:hidden">
+          {formatPrice(item)}
+        </span>
       </div>
-    </div>
+    </button>
   );
 };
 

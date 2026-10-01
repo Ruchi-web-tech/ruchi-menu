@@ -57,3 +57,13 @@
     @apply font-sans text-base font-light leading-relaxed;
   }
 }
+
+@layer utilities {
+  /* Film-grain texture, matching the hero photo */
+  .grain {
+    background-image: url('/grain.png');
+    background-size: 256px 256px;
+  }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
