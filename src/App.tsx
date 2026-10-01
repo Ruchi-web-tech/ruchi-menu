@@ -10,10 +10,19 @@ import Menu from "@/pages/Menu";
 import About from "@/pages/About";
 import Order from "@/pages/Order";
 import NotFound from "@/pages/NotFound";
+import { useEffect } from "react";
+import { useMenuStore } from "@/store/menuStore";
 
 const queryClient = new QueryClient();
 
 const App = () => {
+  const loadLiveContent = useMenuStore((s) => s.loadLiveContent);
+
+  // Pull the latest menu + opening hours from the operations app
+  useEffect(() => {
+    loadLiveContent();
+  }, [loadLiveContent]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>

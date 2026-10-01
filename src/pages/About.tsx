@@ -1,12 +1,13 @@
 
 import { MapPin, Phone, Clock, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import info from '@/data/info.json';
-
-// Swedish number (e.g. 076-098 95 38) -> tel:+46760989538
-const phoneHref = 'tel:' + info.phone.replace(/[^0-9+]/g, '').replace(/^0/, '+46');
+import { useMenuStore } from '@/store/menuStore';
 
 const About = () => {
+  // Live from the operations app, with the bundled info as fallback
+  const info = useMenuStore((s) => s.info);
+  // Swedish number (e.g. 076-098 95 38) -> tel:+46760989538
+  const phoneHref = 'tel:' + info.phone.replace(/[^0-9+]/g, '').replace(/^0/, '+46');
   return (
     <div className="min-h-screen bg-ruchi-cream/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

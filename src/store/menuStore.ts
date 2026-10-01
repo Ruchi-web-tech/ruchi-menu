@@ -7,6 +7,8 @@ import sushi from '@/data/menu/sushi.json';
 import sando from '@/data/menu/sando.json';
 import sides from '@/data/menu/sides.json';
 import drinks from '@/data/menu/drinks.json';
+import infoData from '@/data/info.json';
+import { fetchLiveInfo, fetchLiveMenu, type SiteInfo } from '@/lib/liveContent';
 
 interface MenuState {
   categories: MenuCategory[];
@@ -21,6 +23,9 @@ interface MenuState {
   setCategories: (categories: MenuCategory[]) => void;
   setLoading: (loading: boolean) => void;
   setError: (error: string | null) => void;
+  info: SiteInfo;
+  /** Loads the live menu + info from the operations app (Firebase). */
+  loadLiveContent: () => Promise<void>;
 }
 
 // Sample subcategories
@@ -112,6 +117,12 @@ const sampleMenuItems: MenuItem[] = menuFiles.flatMap(([categoryId, items]) =>
 );
 
 export const useMenuStore = create<MenuState>((set) => ({
+  info: infoData as SiteInfo,
+  loadLiveContent: async () => {
+    const [menu, info] = await Promise.all([fetchLiveMenu(), fetchLiveInfo()]);
+    if (menu) set({ menuItems: menu });
+    if (info) set({ info });
+  },
   categories: sampleCategories,
   menuItems: sampleMenuItems,
   selectedCategory: null,
