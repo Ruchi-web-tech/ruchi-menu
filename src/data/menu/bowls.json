@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Holy Cow",
+    "description": "Yakiniku Entrecôte, Salad mix. Kimchi cabbage, Cucumber, Radishes, Chilli mayonnaise, Gochujang glaze, Green onions, Rice puffs",
+    "price": 150,
+    "priceFrom": false,
+    "subcategories": [
+      "warm-options",
+      "meat"
+    ],
+    "tags": [
+      "NEW"
+    ],
+    "available": true,
+    "image": "/images/holy-cow.png"
+  },
+  {
+    "name": "Crispy Chicken",
+    "description": "Panko-Fried Chicken, Chili Mayonnaise, Teriyaki Sauce, Salad Mix (White Cabbage, Red Cabbage, Carrot), Kale, Radishes, Edamame Beans. Green Onion. Sesame Seeds",
+    "price": 135,
+    "priceFrom": false,
+    "subcategories": [
+      "warm-options",
+      "meat"
+    ],
+    "tags": [
+      "Popular"
+    ],
+    "available": true,
+    "image": "/images/crispy-chicken.jpeg"
+  },
+  {
+    "name": "Miso Salmon",
+    "description": "Grilled miso salmon, Chili mayonnaise, Salad mix (white cabbage, red cabbage, carrot), Kale, Radishes, Edamame beans, Green onions, Coriander, Umami Crunch (Cashew. Almonds, Chili flakes, Pumpkin seeds. Sesame seeds)",
+    "price": 145,
+    "priceFrom": false,
+    "subcategories": [
+      "warm-options",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/miso-salmon.jpg"
+  },
+  {
+    "name": "The Shrimp",
+    "description": "Hand-peeled shrimp, Chili mayonnaise, Salad mix (white cabbage, red cabbage, carrot), Kale, Edamame beans, Cucumber, Seaweed salad, Mango salsa, Wasabi peas **🌶️",
+    "price": 150,
+    "priceFrom": false,
+    "subcategories": [
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/the-shrimp.jpg"
+  },
+  {
+    "name": "Caesar Me",
+    "description": "Miso-Ceasar dressing, Romaine lettuce, Kale, Red onion, Cherry tomato, Panko, Bacon, Black pepper & Grana Padano",
+    "price": 135,
+    "priceFrom": false,
+    "subcategories": [
+      "warm-options",
+      "meat",
+      "fish",
+      "pick-your-protein"
+    ],
+    "available": true,
+    "image": "/images/caesar-me.jpg"
+  },
+  {
+    "name": "The OG",
+    "description": "Sesame dressing (Vegan), Salad mix (white cabbage, red cabbage, carrot), Kale, Radishes, Edamame beans, Red onion, Seaweed salad, Sesame seeds, Chili Flakes, & Rice puffs",
+    "price": 135,
+    "priceFrom": false,
+    "subcategories": [
+      "warm-options",
+      "meat",
+      "plant-based",
+      "fish",
+      "pick-your-protein"
+    ],
+    "tags": [
+      "Vegan Option"
+    ],
+    "available": true,
+    "image": "/images/the-O.G.jpg"
+  },
+  {
+    "name": "Tofu Girl",
+    "description": "Corn-Fried Tofu, Peanut Sauce, Salad Mix (White Cabbage, Red Cabbage, Carrot), Glass Noodles, Avocado, Mango Salsa, Lime, Coriander, Peanut Sprinkles, Sesame Seeds",
+    "price": 140,
+    "priceFrom": false,
+    "subcategories": [
+      "warm-options",
+      "plant-based"
+    ],
+    "tags": [
+      "VGN"
+    ],
+    "available": true,
+    "image": "/images/tofu-girl.jpg"
+  }
+]

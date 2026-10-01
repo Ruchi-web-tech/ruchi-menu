@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Salmon Avo",
+    "description": "Lax, Avokado, Gurka, Aioli. Toppad med: Chilimajonnäs, Sesamfrön, Krispig lök",
+    "price": 99,
+    "priceFrom": false,
+    "subcategories": [
+      "maki",
+      "fish"
+    ],
+    "tags": [
+      "Popular"
+    ],
+    "available": true,
+    "image": "/images/salmon-avo.jpg"
+  },
+  {
+    "name": "Luigi",
+    "description": "Tempura Räkor, Gurka, Aioli. Toppad med: Avokado, Chilimajonnäs, Umami Crunch (Cashew, Mandlar, Chiliflakes, Pumpafrön, Sesam)",
+    "price": 119,
+    "priceFrom": false,
+    "subcategories": [
+      "maki",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/luigi.jpg"
+  },
+  {
+    "name": "See Me Rollin",
+    "description": "Tempura Räkor, Gurka, Aioli. Toppad med: Tryffelmajo, Grana Padano, Rispuffar",
+    "price": 109,
+    "priceFrom": false,
+    "subcategories": [
+      "maki",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/see-me-rollin.jpg"
+  },
+  {
+    "name": "Rolls Royce",
+    "description": "Tamago (ägg), Avokado, Gurka, Aioli. Toppad med: Tryffelmajo, Wasabi ärtor",
+    "price": 99,
+    "priceFrom": false,
+    "subcategories": [
+      "maki",
+      "plant-based"
+    ],
+    "tags": [
+      "VGN"
+    ],
+    "available": true,
+    "image": "/images/rolls-royce.jpg"
+  },
+  {
+    "name": "What The Fish",
+    "description": "Tempura Räkor, Gurka. Toppad med: Halstrad miso lax, chillimajonnäs, Salladslök",
+    "price": 119,
+    "priceFrom": false,
+    "subcategories": [
+      "maki",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/wtf.jpg"
+  },
+  {
+    "name": "Kim Jong",
+    "description": "Yakiniku Entrecôte, gurka, kimchi kål,chillimajonnäs. Topped with green onions and teriyaki.",
+    "price": 109,
+    "priceFrom": false,
+    "subcategories": [
+      "maki",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/kim-jong.jpg"
+  },
+  {
+    "name": "Avo Nigiri",
+    "description": "Toppad med: Teriyakisås, Wasabi ärtor",
+    "price": 85,
+    "priceFrom": true,
+    "subcategories": [
+      "nigiri",
+      "plant-based"
+    ],
+    "tags": [
+      "VGN"
+    ],
+    "available": true,
+    "image": "/images/avo-nigiri.jpg"
+  },
+  {
+    "name": "Lax Nigiri",
+    "description": "Toppad med: Aioli, Salladslök",
+    "price": 90,
+    "priceFrom": true,
+    "subcategories": [
+      "nigiri",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/lax-nigiri.jpeg"
+  },
+  {
+    "name": "Miso Lax Nigiri",
+    "description": "Halstrad lax, Toppad med: Chilimajonnäs, Salladslök",
+    "price": 90,
+    "priceFrom": true,
+    "subcategories": [
+      "nigiri",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/miso-lax-nigiri.jpg"
+  },
+  {
+    "name": "Truffled Lax Nigiri",
+    "description": "Halstrad lax, Toppad med: Tryffelmajonnäs, Grana Padano, Rispuffar",
+    "price": 95,
+    "priceFrom": true,
+    "subcategories": [
+      "nigiri",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/truffled-lax-nigiri.jpg"
+  },
+  {
+    "name": "Mix (12 bitar)",
+    "description": "Rullar: 2 Salmon Avo, 2 Sesam Tempura Räkor, 2 Tryffel Tempura Räkor. Nigiri: 2 Lax, 1 Halstrad lax, 1 Ebi Räkor, 2 Avo",
+    "price": 145,
+    "priceFrom": false,
+    "subcategories": [
+      "mix",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/12-bites.jpeg"
+  },
+  {
+    "name": "Mix (16 bitar)",
+    "description": "Rullar: 2 Salmon Avo, 3 Sesam Tempura Räkor, 3 Tryffel Tempura Räkor. Nigiri: 3 Lax, 2 Halstrad lax, 1 Ebi Räkor, 2 Avo",
+    "price": 185,
+    "priceFrom": false,
+    "subcategories": [
+      "mix",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/16-bites.jpg"
+  },
+  {
+    "name": "Mix (30 bitar)",
+    "description": "Rullar: 4 Salmon Avo, 5 Sesam Tempura Räkor, 5 Tryffel Tempura Räkor. Nigiri: 6 Lax, 3 Halstrad lax, 3 Ebi Räkor, 4 Avo",
+    "price": 340,
+    "priceFrom": false,
+    "subcategories": [
+      "mix",
+      "fish"
+    ],
+    "available": true,
+    "image": "/images/30-bites.png"
+  }
+]

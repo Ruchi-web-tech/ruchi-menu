@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Bang Bang Shrimp",
+    "description": "Tempura Shrimp, Chillimayo, Green Onion",
+    "price": 60,
+    "priceFrom": false,
+    "tags": [
+      "Popular"
+    ],
+    "available": true,
+    "image": "/images/bang-bang-shrimp.jpg"
+  },
+  {
+    "name": "Chicken Popcorn",
+    "description": "Chicken pops, Chilli mayonnaise, Green onions",
+    "price": 60,
+    "priceFrom": false,
+    "tags": [
+      "Popular"
+    ],
+    "available": true,
+    "image": "/images/chicken-pop.jpg"
+  },
+  {
+    "name": "Wakame",
+    "description": "Seaweed salad",
+    "price": 30,
+    "priceFrom": false,
+    "available": true,
+    "image": "/images/wakame.jpg"
+  },
+  {
+    "name": "Mango salsa",
+    "description": "Mango, Tomato, Red Onion, Red Chilli, Lime",
+    "price": 30,
+    "priceFrom": false,
+    "available": true,
+    "image": "/images/mango-salsa.jpg"
+  },
+  {
+    "name": "Avocado Smash",
+    "description": "Avocado, Sesame seeds",
+    "price": 20,
+    "priceFrom": false,
+    "available": true,
+    "image": "/images/avocado-smash.jpg"
+  },
+  {
+    "name": "Miso Soup",
+    "description": "Miso paste (Vegan), Seaweed and Green onions",
+    "price": 20,
+    "priceFrom": false,
+    "available": true,
+    "image": "/images/miso-soup.jpg"
+  }
+]

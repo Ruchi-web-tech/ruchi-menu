@@ -1,7 +1,12 @@
 
 import { create } from 'zustand';
 import { MenuItem, MenuCategory, MenuSubcategory } from '@/types/menu';
-import menuData from '@/data/menu.json';
+import bowls from '@/data/menu/bowls.json';
+import bao from '@/data/menu/bao.json';
+import sushi from '@/data/menu/sushi.json';
+import sando from '@/data/menu/sando.json';
+import sides from '@/data/menu/sides.json';
+import drinks from '@/data/menu/drinks.json';
 
 interface MenuState {
   categories: MenuCategory[];
@@ -82,10 +87,28 @@ const sampleCategories: MenuCategory[] = [
   },
 ];
 
-// Menu items live in src/data/menu.json (edited through Pages CMS).
-// Each item gets a stable id from its position in the file.
-const sampleMenuItems: MenuItem[] = (menuData as Omit<MenuItem, 'id'>[]).map(
-  (item, index) => ({ ...item, id: String(index + 1) })
+// Menu items live in src/data/menu/<category>.json (edited through Pages CMS).
+// The file a dish is in decides its category; ids come from category + position.
+type MenuFileItem = Omit<MenuItem, 'id' | 'categories'>;
+
+const menuFiles: [categoryId: string, items: MenuFileItem[]][] = [
+  ['salads', bowls as MenuFileItem[]], // shown as "Bowls"
+  ['bao', bao as MenuFileItem[]],
+  ['sushi', sushi as MenuFileItem[]],
+  ['sando', sando as MenuFileItem[]],
+  ['sides', sides as MenuFileItem[]],
+  ['drinks', drinks as MenuFileItem[]],
+];
+
+const sampleMenuItems: MenuItem[] = menuFiles.flatMap(([categoryId, items]) =>
+  items.map((item, index) => ({
+    ...item,
+    id: `${categoryId}-${index + 1}`,
+    categories: [categoryId],
+    subcategories: item.subcategories ?? [],
+    tags: item.tags ?? [],
+    available: item.available ?? true,
+  }))
 );
 
 export const useMenuStore = create<MenuState>((set) => ({

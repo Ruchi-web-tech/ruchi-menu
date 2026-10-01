@@ -1,0 +1,55 @@
+[
+  {
+    "name": "Chick'n Crispy",
+    "description": "Panko-Friterad Kyckling, Kimchi kål, Picklad Morot, Chillimajonnäs, Sesamfrön, Salladslock, Chili",
+    "price": 120,
+    "priceFrom": false,
+    "subcategories": [
+      "regular"
+    ],
+    "available": true,
+    "image": "/images/chick-n-crunch.jpeg"
+  },
+  {
+    "name": "Korean Chick'n",
+    "description": "Panko-Friterad Kyckling med gochujang glaze, Kimchi kål, Picklad Morot, Chillimajonnäs, Grana Padano, Salladslock, Chili",
+    "price": 120,
+    "priceFrom": false,
+    "subcategories": [
+      "regular"
+    ],
+    "tags": [
+      "SPICY"
+    ],
+    "available": true,
+    "image": "/images/korean-chick-n.jpg"
+  },
+  {
+    "name": "Golden Tofu",
+    "description": "Corn-Friterad Tofu, Kimchi kål, Picklad Morot, Chillimajonnäs, Sesamfrön, Koriander, Chili",
+    "price": 120,
+    "priceFrom": false,
+    "subcategories": [
+      "plant-based"
+    ],
+    "tags": [
+      "VEG"
+    ],
+    "available": true,
+    "image": "/images/golden-tofu.jpeg"
+  },
+  {
+    "name": "Nutty Tofu",
+    "description": "Corn-Friterad Tofu, Kimchi kål, Picklad Morot, Gurka, Jordnötssmör, Jordnötsspröjsel, Koriander, Chili",
+    "price": 120,
+    "priceFrom": false,
+    "subcategories": [
+      "plant-based"
+    ],
+    "tags": [
+      "VGN"
+    ],
+    "available": true,
+    "image": "/images/nutty-tofu.jpeg"
+  }
+]
