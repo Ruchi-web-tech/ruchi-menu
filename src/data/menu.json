@@ -15,7 +15,7 @@
       "NEW"
     ],
     "available": true,
-    "image": "/images/holy-cow.PNG"
+    "image": "/images/holy-cow.png"
   },
   {
     "name": "Crispy Chicken",
@@ -49,7 +49,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/miso-salmon.JPG"
+    "image": "/images/miso-salmon.jpg"
   },
   {
     "name": "The Shrimp",
@@ -64,7 +64,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/the-shrimp.JPG"
+    "image": "/images/the-shrimp.jpg"
   },
   {
     "name": "Caesar Me",
@@ -82,7 +82,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/caesar-me.JPG"
+    "image": "/images/caesar-me.jpg"
   },
   {
     "name": "The OG",
@@ -103,7 +103,7 @@
       "Vegan Option"
     ],
     "available": true,
-    "image": "/images/the-O.G.JPG"
+    "image": "/images/the-O.G.jpg"
   },
   {
     "name": "Tofu Girl",
@@ -121,7 +121,7 @@
       "VGN"
     ],
     "available": true,
-    "image": "/images/tofu-girl.JPG"
+    "image": "/images/tofu-girl.jpg"
   },
   {
     "name": "Chick'n Crispy",
@@ -205,7 +205,7 @@
       "Popular"
     ],
     "available": true,
-    "image": "/images/salmon-avo.JPG"
+    "image": "/images/salmon-avo.jpg"
   },
   {
     "name": "Luigi",
@@ -221,7 +221,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/luigi.JPG"
+    "image": "/images/luigi.jpg"
   },
   {
     "name": "See Me Rollin",
@@ -237,7 +237,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/see-me-rollin.JPG"
+    "image": "/images/see-me-rollin.jpg"
   },
   {
     "name": "Rolls Royce",
@@ -255,7 +255,7 @@
       "VGN"
     ],
     "available": true,
-    "image": "/images/rolls-royce.JPG"
+    "image": "/images/rolls-royce.jpg"
   },
   {
     "name": "What The Fish",
@@ -271,7 +271,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/wtf.JPG"
+    "image": "/images/wtf.jpg"
   },
   {
     "name": "Kim Jong",
@@ -287,7 +287,7 @@
     ],
     "tags": [],
     "available": true,
-    "image": "/images/kim-jong.JPG"
+    "image": "/images/kim-jong.jpg"
   },
   {
     "name": "Avo Nigiri",
@@ -496,6 +496,6 @@
     "subcategories": [],
     "tags": [],
     "available": true,
-    "image": "/images/ume.PNG"
+    "image": "/images/ume.png"
   }
 ]

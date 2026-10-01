@@ -7,7 +7,7 @@ media:
     label: Dish photos
     input: public/images
     output: /images
-    extensions: [jpg, jpeg, png, webp, JPG, JPEG, PNG]
+    extensions: [jpg, jpeg, png, webp]
 
 content:
   - name: menu
