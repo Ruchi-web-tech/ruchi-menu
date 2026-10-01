@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Clock, Instagram, Facebook, Twitter } from 'lucide-react';
+import { MapPin, Phone, Clock, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const About = () => {
@@ -37,7 +37,7 @@ const About = () => {
                 <MapPin className="h-5 w-5 text-ruchi-blue mt-0.5" />
                 <div>
                   <p className="font-medium text-gray-900">Location</p>
-                  <p className="text-gray-600">Druveforsvägen 13<br />Borås 50433, Sweden</p>
+                  <p className="text-gray-600">Druveforsvägen 13A<br />504 33 Borås, Sweden</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -45,10 +45,10 @@ const About = () => {
                 <div>
                   <p className="font-medium text-gray-900">Hours</p>
                   <p className="text-gray-600">
-                    Mon-Thu: 11:00 - 20:00 <br />
-                    Fri-Sat: 11:00 - 21:00 <br />
-                    Sat: 12:00 - 20:00 <br />
-                    Sunday: close 
+                    Mon–Thu: 11:00–20:00 <br />
+                    Fri: 11:00–21:00 <br />
+                    Sat: 11:00–20:00 <br />
+                    Sun: Closed
                   </p>
                 </div>
               </div>
@@ -109,26 +109,6 @@ const About = () => {
             >
               <a href="https://www.instagram.com/ruchi_room/" target="_blank" rel="noopener noreferrer">
                 <Instagram className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="rounded-full border-ruchi-blue/20 text-ruchi-blue hover:bg-ruchi-blue hover:text-white"
-              asChild
-            >
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Facebook className="h-5 w-5" />
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="rounded-full border-ruchi-blue/20 text-ruchi-blue hover:bg-ruchi-blue hover:text-white"
-              asChild
-            >
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5" />
               </a>
             </Button>
           </div>
