@@ -6,12 +6,9 @@ import { Button } from '@/components/ui/button';
 
 const Order = () => {
   useEffect(() => {
-    // Redirect to Qopla after a short delay
-    const timer = setTimeout(() => {
-      window.open('https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order', '_blank');
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    // Anyone landing on ruchi.se/order (old links, bookmarks) is sent straight
+    // to Qopla in the same tab — browsers never block this, unlike a pop-up.
+    window.location.replace('https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order');
   }, []);
 
   return (
@@ -28,8 +25,8 @@ const Order = () => {
           </h1>
           
           <p className="text-gray-600 mb-6">
-            You're being redirected to our online ordering platform. 
-            If the page doesn't open automatically, click the button below.
+            Taking you to our online ordering platform…
+            If nothing happens, tap the button below.
           </p>
 
           {/* Manual Redirect Button */}
