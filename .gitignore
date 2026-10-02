@@ -29,3 +29,6 @@ dist-ssr
 *.mov
 *.zip
 *.pkg
+
+# Firebase CLI cache
+.firebase/

@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "ruchi-operations"
+  },
+  "targets": {
+    "ruchi-operations": {
+      "hosting": {
+        "website": ["ruchi-se"]
+      }
+    }
+  }
+}
