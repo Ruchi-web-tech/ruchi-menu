@@ -23,6 +23,21 @@ export interface SiteInfo {
   phone: string;
   hours: { days: string; time: string }[];
   instagram: string;
+  /** One-off hours for a date (holidays), set in the operations app. */
+  specialDays?: { date: string; time: string; note: string }[];
+}
+
+/** The daily banner, one per date (YYYY-MM-DD), set in the operations app. */
+export interface DayBanner {
+  date: string;
+  style: 'card' | 'bar' | 'sticker';
+  label: string;
+  headline: string;
+  line: string;
+  price: string;
+  dish: string;
+  offer: boolean;
+  active: boolean;
 }
 
 // ---- Firestore REST value decoding ------------------------------------
@@ -113,11 +128,61 @@ export async function fetchLiveInfo(): Promise<SiteInfo | null> {
   const hours = Array.isArray(f.hours)
     ? (f.hours as Record<string, unknown>[]).map((h) => ({ days: asString(h.days), time: asString(h.time) }))
     : [];
+  const specialDays = Array.isArray(f.specialDays)
+    ? (f.specialDays as Record<string, unknown>[])
+        .map((d) => ({ date: asString(d.date), time: asString(d.time), note: asString(d.note) }))
+        .filter((d) => d.date && d.time)
+    : [];
   return {
     address: asString(f.address),
     postalCity: asString(f.postalCity),
     phone: asString(f.phone),
     hours,
     instagram: asString(f.instagram),
+    specialDays,
   };
+}
+
+/** Banners from this date on (a handful of days), or [] if none / offline. */
+export async function fetchBanners(fromDate: string): Promise<DayBanner[]> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  try {
+    const res = await fetch(`${BASE}:runQuery`, {
+      method: 'POST',
+      signal: controller.signal,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        structuredQuery: {
+          from: [{ collectionId: 'websiteBanners' }],
+          where: { fieldFilter: { field: { fieldPath: 'date' }, op: 'GREATER_THAN_OR_EQUAL', value: { stringValue: fromDate } } },
+          orderBy: [{ field: { fieldPath: 'date' }, direction: 'ASCENDING' }],
+          limit: 10,
+        },
+      }),
+    });
+    if (!res.ok) return [];
+    const rows: { document?: { fields?: Record<string, FsValue> } }[] = await res.json();
+    return rows
+      .filter((r) => r.document?.fields)
+      .map((r) => {
+        const f = decodeFields(r.document!.fields!);
+        const style = asString(f.style);
+        return {
+          date: asString(f.date),
+          style: style === 'bar' || style === 'sticker' ? style : 'card',
+          label: asString(f.label),
+          headline: asString(f.headline),
+          line: asString(f.line),
+          price: asString(f.price),
+          dish: asString(f.dish),
+          offer: f.offer === true,
+          active: f.active !== false,
+        } satisfies DayBanner;
+      });
+  } catch {
+    return [];
+  } finally {
+    clearTimeout(timer);
+  }
 }

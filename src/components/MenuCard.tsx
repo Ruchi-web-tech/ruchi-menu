@@ -1,5 +1,6 @@
 import { MenuItem } from '@/types/menu';
 import { cn, formatPrice } from '@/lib/utils';
+import DishTile from '@/components/DishTile';
 
 interface MenuCardProps {
   item: MenuItem;
@@ -47,7 +48,7 @@ const MenuCard = ({ item, onClick }: MenuCardProps) => {
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="grain h-full w-full bg-ruchi-purple/40" />
+          <DishTile name={item.name} categories={item.categories} textClassName="text-[15px] md:text-[34px]" />
         )}
         {firstTag && (
           <span className={cn(tagClass(firstTag), 'absolute left-3.5 top-3.5 hidden h-7 px-3 text-xs md:inline-flex')}>

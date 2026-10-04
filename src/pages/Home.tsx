@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import CurvedLoop from '@/components/CurvedLoop'
 import SiteFooter from '@/components/SiteFooter'
 import { useMenuStore } from '@/store/menuStore'
-import { todaysHours } from '@/lib/hours'
+import { specialDay, swedishDateKey, todaysHours } from '@/lib/hours'
+import { BannerCard, BannerSticker } from '@/components/DailyBanner'
 import { cn } from '@/lib/utils'
 
 const ORDER_URL = 'https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order'
@@ -27,6 +28,7 @@ const Home = () => {
 
   const hoursToday = todaysHours(info)
   const closedToday = !hoursToday || /closed|stängt/i.test(hoursToday)
+  const specialToday = specialDay(info, swedishDateKey())
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`RUCHI ${info.address} ${info.postalCity}`)}`
   const instagramHandle = '@' + (info.instagram.replace(/\/+$/, '').split('/').pop() || 'ruchi_room')
 
@@ -50,6 +52,7 @@ const Home = () => {
           <img src="/ruchi-hero-mobile.jpg" alt="RUCHI bowls, bao and sushi seen from above" className="block h-full w-full object-cover md:hidden" />
           <img src="/ruchi-hero-desktop.jpg" alt="RUCHI bowls, bao and sushi seen from above" className="hidden h-full w-full object-cover md:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
+          <BannerSticker />
 
           <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2.5 p-[18px] md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-6 md:p-10">
             <span className="inline-flex h-[34px] w-fit items-center gap-2 rounded-full bg-ruchi-yellow px-3.5 font-sans text-[13px] font-bold text-ruchi-ink md:h-10 md:px-[18px] md:text-sm">
@@ -66,6 +69,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* TODAY'S PICK (daily banner, set in the operations app) */}
+        <BannerCard />
 
         {/* CATEGORY TILES */}
         <section className="mt-10 flex flex-col gap-3.5 md:mt-[72px] md:gap-6">
@@ -131,6 +137,7 @@ const Home = () => {
               {closedToday ? 'Closed' : hoursToday}
             </span>
             <span className="font-sans text-[13px] font-normal text-[#4A4360] md:text-[15px]">
+              {specialToday?.note ? `${specialToday.note} · ` : ''}
               {info.hours.map((h) => `${h.days} ${h.time}`).join(' · ')}
             </span>
           </div>
