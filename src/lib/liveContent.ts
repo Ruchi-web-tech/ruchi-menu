@@ -1,4 +1,5 @@
 import type { MenuItem } from '@/types/menu';
+import type { ThemeSetting } from '@/lib/themes';
 
 /**
  * Live menu + restaurant info, managed from the RUCHI Operations app
@@ -141,6 +142,22 @@ export async function fetchLiveInfo(): Promise<SiteInfo | null> {
     instagram: asString(f.instagram),
     specialDays,
   };
+}
+
+/** Seasonal theme settings from the operations app, or null to use the defaults. */
+export async function fetchThemeSettings(): Promise<Partial<ThemeSetting>[] | null> {
+  const data = await getJson(`${BASE}/website/themes`);
+  if (!data?.fields) return null;
+  const f = decodeFields(data.fields);
+  if (!Array.isArray(f.themes)) return null;
+  return (f.themes as Record<string, unknown>[]).map((t) => ({
+    id: asString(t.id) as ThemeSetting['id'],
+    enabled: t.enabled !== false,
+    start: asString(t.start),
+    end: asString(t.end),
+    heroDesktop: asString(t.heroDesktop) || undefined,
+    heroMobile: asString(t.heroMobile) || undefined,
+  }));
 }
 
 /** Banners from this date on (a handful of days), or [] if none / offline. */

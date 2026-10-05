@@ -5,6 +5,8 @@ import SiteFooter from '@/components/SiteFooter'
 import { useMenuStore } from '@/store/menuStore'
 import { specialDay, swedishDateKey, todaysHours } from '@/lib/hours'
 import { BannerCard, BannerSticker } from '@/components/DailyBanner'
+import HeroTheme, { THEME_PILL } from '@/components/HeroTheme'
+import { activeTheme, previewTheme } from '@/lib/themes'
 import { cn } from '@/lib/utils'
 
 const ORDER_URL = 'https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order'
@@ -24,7 +26,8 @@ const DELIVERY = [
 ]
 
 const Home = () => {
-  const { menuItems, info } = useMenuStore()
+  const { menuItems, info, themes } = useMenuStore()
+  const theme = previewTheme(themes, window.location.search) ?? activeTheme(swedishDateKey(), themes)
 
   const hoursToday = todaysHours(info)
   const closedToday = !hoursToday || /closed|stängt/i.test(hoursToday)
@@ -49,13 +52,14 @@ const Home = () => {
       {/* HERO */}
       <div className="mx-auto max-w-7xl px-3 sm:px-6 md:px-8">
         <section className="relative h-[600px] overflow-hidden rounded-[32px] bg-ruchi-blue md:h-[720px] md:rounded-[40px]">
-          <img src="/ruchi-hero-mobile.jpg" alt="RUCHI bowls, bao and sushi seen from above" className="block h-full w-full object-cover md:hidden" />
-          <img src="/ruchi-hero-desktop.jpg" alt="RUCHI bowls, bao and sushi seen from above" className="hidden h-full w-full object-cover md:block" />
+          <img src={theme?.heroMobile || '/ruchi-hero-mobile.jpg'} alt="RUCHI bowls, bao and sushi seen from above" className="block h-full w-full object-cover md:hidden" />
+          <img src={theme?.heroDesktop || '/ruchi-hero-desktop.jpg'} alt="RUCHI bowls, bao and sushi seen from above" className="hidden h-full w-full object-cover md:block" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" aria-hidden="true" />
+          {theme && <HeroTheme theme={theme.id} />}
           <BannerSticker />
 
           <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2.5 p-[18px] md:flex-row md:flex-wrap md:items-end md:justify-between md:gap-6 md:p-10">
-            <span className="inline-flex h-[34px] w-fit items-center gap-2 rounded-full bg-ruchi-yellow px-3.5 font-sans text-[13px] font-bold text-ruchi-ink md:h-10 md:px-[18px] md:text-sm">
+            <span className={cn('inline-flex h-[34px] w-fit items-center gap-2 rounded-full px-3.5', (theme && THEME_PILL[theme.id]) || 'bg-ruchi-yellow', 'font-sans text-[13px] font-bold text-ruchi-ink md:h-10 md:px-[18px] md:text-sm')}>
               <span className="h-2 w-2 rounded-full bg-ruchi-ink" aria-hidden="true" />
               {closedToday ? 'Closed today' : `Open today · ${hoursToday}`}
             </span>

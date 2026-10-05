@@ -8,7 +8,8 @@ import sando from '@/data/menu/sando.json';
 import sides from '@/data/menu/sides.json';
 import drinks from '@/data/menu/drinks.json';
 import infoData from '@/data/info.json';
-import { fetchBanners, fetchLiveInfo, fetchLiveMenu, type DayBanner, type SiteInfo } from '@/lib/liveContent';
+import { fetchBanners, fetchLiveInfo, fetchLiveMenu, fetchThemeSettings, type DayBanner, type SiteInfo } from '@/lib/liveContent';
+import { DEFAULT_THEMES, mergeThemes, type ThemeSetting } from '@/lib/themes';
 import { swedishDateKey } from '@/lib/hours';
 
 interface MenuState {
@@ -27,6 +28,8 @@ interface MenuState {
   info: SiteInfo;
   /** Daily banners from today on (operations app → Website → Daily banner). */
   banners: DayBanner[];
+  /** Seasonal hero themes (defaults + operations app settings). */
+  themes: ThemeSetting[];
   /** True once the live menu + banners have been fetched (or failed). */
   liveLoaded: boolean;
   /** Loads the live menu + info from the operations app (Firebase). */
@@ -124,9 +127,16 @@ const sampleMenuItems: MenuItem[] = menuFiles.flatMap(([categoryId, items]) =>
 export const useMenuStore = create<MenuState>((set) => ({
   info: infoData as SiteInfo,
   banners: [],
+  themes: DEFAULT_THEMES,
   liveLoaded: false,
   loadLiveContent: async () => {
-    const [menu, info, banners] = await Promise.all([fetchLiveMenu(), fetchLiveInfo(), fetchBanners(swedishDateKey())]);
+    const [menu, info, banners, themes] = await Promise.all([
+      fetchLiveMenu(),
+      fetchLiveInfo(),
+      fetchBanners(swedishDateKey()),
+      fetchThemeSettings(),
+    ]);
+    set({ themes: mergeThemes(themes) });
     if (menu) set({ menuItems: menu });
     if (info) set({ info });
     set({ banners, liveLoaded: true });

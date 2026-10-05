@@ -67,3 +67,39 @@
   .no-scrollbar { scrollbar-width: none; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
 }
+
+/* Seasonal hero themes (src/components/HeroTheme.tsx) */
+@keyframes theme-fall {
+  from { transform: translateY(0); }
+  to { transform: translateY(780px); }
+}
+@keyframes theme-drift {
+  0%, 100% { transform: translate(0, 0) rotate(-6deg); }
+  50% { transform: translate(14px, -10px) rotate(6deg); }
+}
+@keyframes theme-twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.theme-fall { animation: theme-fall linear infinite; }
+.theme-drift { animation: theme-drift 3.2s ease-in-out infinite; }
+.theme-twinkle { animation: theme-twinkle 1.8s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .theme-fall, .theme-drift, .theme-twinkle { animation: none; }
+  /* Without motion, spread the snow/confetti over the photo instead of above it */
+  .theme-fall { transform: translateY(calc(var(--still, 0.5) * 600px)); }
+}
+@keyframes theme-rise {
+  from { transform: translateY(0); }
+  to { transform: translateY(-780px); }
+}
+@keyframes theme-sway {
+  0%, 100% { transform: translateX(-50%) rotate(-5deg); }
+  50% { transform: translateX(-50%) rotate(5deg); }
+}
+.theme-rise { animation: theme-rise linear infinite; }
+.theme-sway { animation: theme-sway 4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .theme-rise, .theme-sway { animation: none; }
+  .theme-rise { transform: translateY(calc(var(--still, 0.5) * -600px)); }
+}
