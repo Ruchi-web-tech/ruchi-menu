@@ -1,5 +1,6 @@
 import SiteFooter from '@/components/SiteFooter';
 import { useMenuStore } from '@/store/menuStore';
+import { usePageMeta } from '@/lib/seo';
 
 const VALUES = [
   { text: 'Fresh ingredients, sourced daily', style: 'grain bg-ruchi-yellow' },
@@ -11,6 +12,11 @@ const VALUES = [
 const label = 'font-sans text-xs font-bold uppercase tracking-[0.14em] text-ruchi-blue md:text-[13px]';
 
 const About = () => {
+  usePageMeta({
+    title: 'About RUCHI | Asian-inspired Restaurant in Borås',
+    description: 'Born in the north, inspired by Asia. Find RUCHI at Druveforsvägen 13A, Borås: opening hours, phone and directions. Öppettider, adress och telefon.',
+    path: '/about',
+  });
   // Live from the operations app, with the bundled info as fallback
   const info = useMenuStore((s) => s.info);
   // Swedish number (e.g. 076-098 95 38) -> tel:+46760989538

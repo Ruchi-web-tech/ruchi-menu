@@ -10,7 +10,7 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/order",
         "destination": "/index.html"
       }
     ],
@@ -59,6 +59,20 @@
             "value": "no-cache"
           }
         ]
+      }
+    ],
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/images/30-bites.png",
+        "destination": "/images/30-bites.jpg",
+        "type": 301
+      },
+      {
+        "source": "/images/holy-cow.png",
+        "destination": "/images/holy-cow.jpg",
+        "type": 301
       }
     ]
   }

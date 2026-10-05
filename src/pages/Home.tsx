@@ -8,6 +8,7 @@ import { BannerCard, BannerSticker } from '@/components/DailyBanner'
 import HeroTheme, { THEME_PILL } from '@/components/HeroTheme'
 import { activeTheme, previewTheme } from '@/lib/themes'
 import { cn } from '@/lib/utils'
+import { usePageMeta } from '@/lib/seo'
 
 const ORDER_URL = 'https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order'
 
@@ -27,6 +28,11 @@ const DELIVERY = [
 
 const Home = () => {
   const { menuItems, info, themes } = useMenuStore()
+  usePageMeta({
+    title: 'RUCHI Borås | Asian-inspired Bowls, Bao, Sushi & Sando',
+    description: 'Asian-inspired bowls, bao, sushi and sando in Borås. Eat in, take away or order online at Druveforsvägen 13A. Sushi, bao och lunch i Borås.',
+    path: '/',
+  })
   const theme = previewTheme(themes, window.location.search) ?? activeTheme(swedishDateKey(), themes)
 
   const hoursToday = todaysHours(info)
@@ -51,6 +57,8 @@ const Home = () => {
     <div className="min-h-screen bg-ruchi-cream text-ruchi-ink">
       {/* HERO */}
       <div className="mx-auto max-w-7xl px-3 sm:px-6 md:px-8">
+        {/* Main heading for search engines and screen readers; the hero photo says it visually */}
+        <h1 className="sr-only">RUCHI – Asian-inspired bowls, bao, sushi and sando in Borås</h1>
         <section className="relative h-[600px] overflow-hidden rounded-[32px] bg-ruchi-blue md:h-[720px] md:rounded-[40px]">
           <img src={theme?.heroMobile || '/ruchi-hero-mobile.jpg'} alt="RUCHI bowls, bao and sushi seen from above" className="block h-full w-full object-cover md:hidden" />
           <img src={theme?.heroDesktop || '/ruchi-hero-desktop.jpg'} alt="RUCHI bowls, bao and sushi seen from above" className="hidden h-full w-full object-cover md:block" />

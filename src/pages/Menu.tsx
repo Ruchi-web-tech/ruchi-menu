@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useMenuStore } from '@/store/menuStore';
+import { useMenuJsonLd, usePageMeta } from '@/lib/seo';
 import MenuCard from '@/components/MenuCard';
 import MenuItemDialog from '@/components/MenuItemDialog';
 import SiteFooter from '@/components/SiteFooter';
@@ -29,6 +30,12 @@ const DELIVERY = [
 
 const Menu = () => {
   const { menuItems, categories, info } = useMenuStore();
+  usePageMeta({
+    title: 'Menu & Prices | RUCHI Borås – Bowls, Bao, Sushi & Sando',
+    description: 'The full RUCHI menu with prices: Asian bowls, bao with fries, sushi rolls and nigiri, Nashville hot chicken sando, sides and drinks. Meny och priser – sushi, bao och bowls i Borås.',
+    path: '/menu',
+  });
+  useMenuJsonLd(menuItems);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);

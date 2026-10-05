@@ -13,11 +13,16 @@ import Order from "@/pages/Order";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useMenuStore } from "@/store/menuStore";
+import { useRestaurantJsonLd } from "@/lib/seo";
 
 const queryClient = new QueryClient();
 
 const App = () => {
   const loadLiveContent = useMenuStore((s) => s.loadLiveContent);
+  const info = useMenuStore((s) => s.info);
+
+  // Restaurant details for Google, kept in step with the live hours
+  useRestaurantJsonLd(info);
 
   // Pull the latest menu + opening hours from the operations app
   useEffect(() => {

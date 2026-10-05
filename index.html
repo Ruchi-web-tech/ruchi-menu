@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RUCHI | Bowls, Bao, Sushi & Sando in Borås</title>
-    <meta name="description" content="Welcome to RUCHI Borås – your spot for fresh bowls, fluffy bao, sushi and sando. Find us at Druveforsvägen 13A or order online today." />
-    <meta name="theme-color" content="#FFFFFF" />
+    <title>RUCHI Borås | Asian-inspired Bowls, Bao, Sushi &amp; Sando</title>
+    <meta name="description" content="Asian-inspired bowls, bao, sushi and sando in Borås. Eat in, take away or order online at Druveforsvägen 13A. Sushi, bao och lunch i Borås." />
+    <link rel="canonical" href="https://ruchi.se/" />
+    <meta name="theme-color" content="#FBF5E9" />
 
     <!-- PWA Configuration -->
     <link rel="manifest" href="/manifest.json" />
@@ -13,11 +14,12 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- Open Graph (preview when the link is shared on WhatsApp, Facebook, Instagram, iMessage…) -->
-    <meta property="og:title" content="RUCHI – Asian-inspired Bowls, Bao, Sushi &amp; Sando in Borås" />
+    <meta property="og:title" content="RUCHI Borås | Asian-inspired Bowls, Bao, Sushi &amp; Sando" />
     <meta property="og:description" content="Born in the north, inspired by Asia. Order online for pickup or delivery." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ruchi.se/" />
     <meta property="og:site_name" content="RUCHI" />
+    <meta property="og:locale" content="en_GB" />
     <meta property="og:image" content="https://ruchi.se/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -27,14 +29,58 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://ruchi.se/og-image.jpg" />
 
-    <!-- Google Fonts -->
+    <!-- Fonts (one request, only the weights the site uses) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Unbounded:wght@600;800;900&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Load the homepage photo first (it's the biggest thing on screen) -->
+    <link rel="preload" as="image" href="/ruchi-hero-mobile.jpg" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/ruchi-hero-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
+
+    <!--
+      Restaurant details for Google (address, hours, menu, ordering).
+      The website replaces this with the live details from the operations app
+      (src/components/SeoData.tsx), so hours stay correct.
+    -->
+    <script type="application/ld+json" id="ld-restaurant">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "@id": "https://ruchi.se/#restaurant",
+      "name": "RUCHI",
+      "alternateName": "RUCHI Borås",
+      "description": "Asian-inspired bowls, bao, sushi and sando in Borås. Born in the north, inspired by Asia.",
+      "url": "https://ruchi.se/",
+      "image": "https://ruchi.se/og-image.jpg",
+      "logo": "https://ruchi.se/logo-square-cream.png",
+      "telephone": "+46760989538",
+      "priceRange": "$$",
+      "servesCuisine": ["Asian fusion", "Sushi", "Japanese", "Korean", "Bao", "Poke bowls"],
+      "keywords": "sushi Borås, bao Borås, lunch Borås, asiatisk restaurang Borås, asiatisk mat Borås, bowls Borås",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Druveforsvägen 13A",
+        "postalCode": "504 33",
+        "addressLocality": "Borås",
+        "addressCountry": "SE"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "11:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "11:00", "closes": "21:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "20:00" }
+      ],
+      "hasMenu": "https://ruchi.se/menu",
+      "sameAs": ["https://www.instagram.com/ruchi_room/"],
+      "potentialAction": {
+        "@type": "OrderAction",
+        "target": "https://qopla.com/restaurant/ruchi/qEQLXMQwAr/order"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

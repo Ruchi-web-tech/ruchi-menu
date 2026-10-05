@@ -7,7 +7,7 @@ function dayIndex(word: string): number {
 }
 
 /** Does a label like "Mon–Thu", "Fri", "Sat-Sun" or "Mon, Wed" cover this weekday (0 = Sunday)? */
-function coversDay(label: string, day: number): boolean {
+export function coversDay(label: string, day: number): boolean {
   return label.split(/[,&]/).some((part) => {
     const [from, to] = part.split(/[–—-]/).map(dayIndex);
     if (from < 0) return false;

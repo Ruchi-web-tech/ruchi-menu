@@ -1,19 +1,15 @@
-
 {
-  "name": "RUCHI - Delicious Asian Cuisine",
+  "name": "RUCHI Borås – Bowls, Bao, Sushi & Sando",
   "short_name": "RUCHI",
-  "description": "Experience authentic Asian flavors with our fresh salads, bao, sushi and more.",
+  "description": "Asian-inspired bowls, bao, sushi and sando in Borås. Born in the north, inspired by Asia.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FBF5E9",
-  "theme_color": "#6447D7",
+  "theme_color": "#FBF5E9",
   "orientation": "portrait-primary",
   "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
+    { "src": "/favicon.ico", "sizes": "64x64 32x32 24x24 16x16", "type": "image/x-icon" },
+    { "src": "/logo-square-cream.png", "sizes": "395x395", "type": "image/png" }
   ],
   "categories": ["food", "restaurants", "lifestyle"]
 }
